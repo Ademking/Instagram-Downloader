@@ -128,7 +128,7 @@ function toDataURL(url, callback) {
 											d = data;
 											//console.log(d);
 											c = data.match(/<meta.*property="og:image".*content="(.*)".*\/>/);
-											console.log(c[0]);
+											//console.log(c[0]);
 											
 											e = c[0].replace('<meta property="og:image" content="', '');
 											f = e.replace('"', '');
@@ -137,8 +137,22 @@ function toDataURL(url, callback) {
 											
 											g = ff.replace('/s150x150/', '/');
 											h = g.replace('/>','');
-											console.log(h);
-											$(".btn-info").after('<a class="btn btn-success" href="'+h+'" download> Download Complete ... Click Here</a> ');	
+											console.log("h : " + h);
+											
+											
+											/* ========================
+												   update 20/03/2018
+											   ======================== */
+											   
+											var new_regex = /vp\/[a-zA-Z0-9][^t]*/;
+											jj  = h.replace(new_regex , "");
+											
+											
+												/* ========================
+												   update 20/03/2018
+											   ======================== */
+											   
+											$(".btn-info").after('<a class="btn btn-success" href="'+jj+'" download> Download Complete ... Click Here</a> ');	
 											$("#sub").remove();
 								
 								}
