@@ -103,7 +103,11 @@ function toDataURL(url, callback) {
 	$("#sub").click(function() {
   
   var x = $("#userinput").val();
-  
+  if(x == "")
+  {
+    alert("sorry please insert a valid link");
+    return false;
+  }
 					//normal pic
   
 				var c,d,e,f,ff,g ;
